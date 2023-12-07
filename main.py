@@ -18,6 +18,11 @@ names = [
     'grp_total',
     'grp_per_capita',
     'real_income',
+    'working_age_prc',
+    'apartment_per_1000',
+    'bank_deposits',
+    'debt_on_housing_loans',
+    'debt_on_mortgage',
 ]
 
 months = {'январь': 1, 'февраль': 2, 'март': 3, 'апрель': 4,
@@ -26,7 +31,7 @@ months = {'январь': 1, 'февраль': 2, 'март': 3, 'апрель':
 
 quarters = {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'год': 'FULL'}
 
-num_variables = 17
+num_variables = 22
 
 df_fin = None
 
@@ -55,5 +60,5 @@ for i in range(num_variables):
     else:
         df_fin = df_fin.merge(df, on='region', how='outer')
 
-df_fin.to_csv('initial_data.csv')
-
+df_fin.to_excel('initial_data.xlsx')
+print(df_fin.shape)
