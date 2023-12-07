@@ -40,7 +40,7 @@ for i in range(num_variables):
     df = df.rename(columns={'Unnamed: 0': 'region'})
 
     if all(df.columns[1:].str.isnumeric()):
-        cols = {x: f'{names[i]}_{x}' for x in df.columns[1:]}
+        cols = {x: f'{names[i]}_year_{x}' for x in df.columns[1:]}
         df = df.rename(columns=cols)
 
     elif any(df.columns[1:].str.contains('квартал')):
